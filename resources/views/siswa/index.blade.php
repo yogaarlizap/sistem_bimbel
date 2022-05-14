@@ -14,7 +14,9 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header">
-                    <a onclick="addForm()" class="btn btn-success"><i class="fa fa-plus-circle"></i> Tambah</a>
+                    @if (Auth::user()->role->name == "Superadmin" || Auth::user()->role->name == "Karyawan")
+                        <a onclick="addForm()" class="btn btn-success"><i class="fa fa-plus-circle"></i> Tambah</a>
+                    @endif
                 </div>
                 <div class="box-body justify-content-center mt-2">
 
@@ -49,8 +51,10 @@
                                     </td>
                                     <td class="align-middle">
                                         <button class="btn-sm" onclick="showButton({{ $list->id }})"><i class="fas fa-eye" style="color: #5762E3"></i></button>
-                                        <button class="btn-sm" onclick="editButton({{ $list->id }})"><i class="fas fa-pencil-alt" style="color: #5762E3"></i></button>
-                                        <button class="btn-sm" onclick="deleteButton({{ $list->id }})"><i class="fas fa-trash" style="color: #5762E3"></i></button>
+                                        @if (Auth::user()->role->name == "Superadmin" || Auth::user()->role->name == "Karyawan")
+                                            <button class="btn-sm" onclick="editButton({{ $list->id }})"><i class="fas fa-pencil-alt" style="color: #5762E3"></i></button>
+                                            <button class="btn-sm" onclick="deleteButton({{ $list->id }})"><i class="fas fa-trash" style="color: #5762E3"></i></button>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

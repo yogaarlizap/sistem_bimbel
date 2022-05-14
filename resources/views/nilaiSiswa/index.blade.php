@@ -49,8 +49,10 @@
                                     </td>
                                     <td class="align-middle">
                                         <button class="btn-sm" onclick="showButton({{ $list->id }})"><i class="fas fa-eye" style="color: #5762E3"></i></button>
-                                        <button class="btn-sm" onclick="editButton({{ $list->id }})"><i class="fas fa-pencil-alt" style="color: #5762E3"></i></button>
-                                        <button class="btn-sm" onclick="deleteButton({{ $list->id }})"><i class="fas fa-trash" style="color: #5762E3"></i></button>
+                                        @if (Auth::user()->role->name == "Superadmin" || Auth::user()->role->name == "Karyawan")
+                                            <button class="btn-sm" onclick="editButton({{ $list->id }})"><i class="fas fa-pencil-alt" style="color: #5762E3"></i></button>
+                                            <button class="btn-sm" onclick="deleteButton({{ $list->id }})"><i class="fas fa-trash" style="color: #5762E3"></i></button>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

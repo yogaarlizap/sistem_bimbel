@@ -9,41 +9,46 @@
                 <p>Dashboard</p>
             </a>
         </li>
-
-        <li class="nav-item">
-            <a href="{{ route('siswa.index') }}" class="nav-link {{ setActive('siswa.index') }}">
-                <i class="nav-icon fas fa-graduation-cap"></i>
-                <p>Siswa</p>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="{{ route('nilai_siswa.index') }}" class="nav-link {{ setActive('nilai_siswa.index') }}">
-                <i class="nav-icon fa-solid fa-book"></i>
-                <p>Nilai Siswa</p>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="{{ route('pembayaran_siswa.index') }}" class="nav-link {{ setActive('pembayaran_siswa.index') }}">
-                <i class="nav-icon fa-solid fa-money-bill"></i>
-                <p>Pembayaran Siswa</p>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="{{ route('pengajar.index') }}" class="nav-link {{ setActive('pengajar.index') }}">
-                <i class="nav-icon fa-solid fa-chalkboard-user"></i>
-                <p>Pengajar</p>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="{{ route('users.index') }}" class="nav-link {{ setActive('users.index') }}">
-                <i class="nav-icon fa-solid fa-user"></i>
-                <p>User</p>
-            </a>
-        </li>
+        @if (Auth::user()->role->name == "Superadmin" || Auth::user()->role->name == "Karyawan" || Auth::user()->role->name == "Pengajar")
+            <li class="nav-item">
+                <a href="{{ route('siswa.index') }}" class="nav-link {{ setActive('siswa.index') }}">
+                    <i class="nav-icon fas fa-graduation-cap"></i>
+                    <p>Siswa</p>
+                </a>
+            </li>
+        @endif
+        @if (Auth::user()->role->name == "Superadmin" || Auth::user()->role->name == "Karyawan" || Auth::user()->role->name == "Pengajar")
+            <li class="nav-item">
+                <a href="{{ route('nilai_siswa.index') }}" class="nav-link {{ setActive('nilai_siswa.index') }}">
+                    <i class="nav-icon fa-solid fa-book"></i>
+                    <p>Nilai Siswa</p>
+                </a>
+            </li>
+        @endif
+        @if (Auth::user()->role->name == "Superadmin" || Auth::user()->role->name == "Karyawan")
+            <li class="nav-item">
+                <a href="{{ route('pembayaran_siswa.index') }}" class="nav-link {{ setActive('pembayaran_siswa.index') }}">
+                    <i class="nav-icon fa-solid fa-money-bill"></i>
+                    <p>Pembayaran Siswa</p>
+                </a>
+            </li>
+        @endif
+        @if (Auth::user()->role->name == "Superadmin" || Auth::user()->role->name == "Karyawan")
+            <li class="nav-item">
+                <a href="{{ route('pengajar.index') }}" class="nav-link {{ setActive('pengajar.index') }}">
+                    <i class="nav-icon fa-solid fa-chalkboard-user"></i>
+                    <p>Pengajar</p>
+                </a>
+            </li>
+        @endif
+        @if (Auth::user()->role->name == "Superadmin")
+            <li class="nav-item">
+                <a href="{{ route('users.index') }}" class="nav-link {{ setActive('users.index') }}">
+                    <i class="nav-icon fa-solid fa-user"></i>
+                    <p>User</p>
+                </a>
+            </li>
+        @endif
 
         {{-- <li class="nav-item {{ setMenuOpen(['admin/tes1', 'admin/tes2']) }}">
             <a href="#" class="nav-link {{ setActive(['admin/tes1', 'admin/tes2']) }}">

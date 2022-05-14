@@ -17,12 +17,14 @@ use App\Http\Controllers\Admin\Dashboard\DashboardController;
 
 Auth::routes();
 Route::middleware("auth")->group(function(){
-
+    Route::get('cek', function(){
+        dd(Auth::user()->role->name);
+    });
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('/pengajar', 'PengajarController');
-    Route::resource('/siswa', 'SiswaController');
-    Route::resource('/nilai_siswa', 'NilaiSiswaController');
-    Route::resource('/pembayaran_siswa', 'PembayaranSiswaController');
-    Route::resource('/users', 'UserController');
+    Route::resource('/pengajar', 'PengajarController')->middleware('CheckRole:Superadmin,Karyawan');
+    Route::resource('/siswa', 'SiswaController')->middleware('CheckRole:Pengajar,Karyawan,Superadmin');
+    Route::resource('/nilai_siswa', 'NilaiSiswaController')->middleware('CheckRole:Pengajar,Karyawan,Superadmin');
+    Route::resource('/pembayaran_siswa', 'PembayaranSiswaController')->middleware('CheckRole:Karyawan,Superadmin');
+    Route::resource('/users', 'UserController')->middleware('CheckRole:Superadmin');
 });
 

@@ -19,6 +19,7 @@ class CreatePembayaranSiswaTable extends Migration
             $table->string("status");
             $table->integer("nominal_diterima");
             $table->integer("nominal_tertunggak");
+            $table->enum('jenis_pembayaran', ['Bulanan', 'Registrasi']);
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Siswa;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 
 class SiswaFactory extends Factory
 {
@@ -21,6 +22,7 @@ class SiswaFactory extends Factory
      */
     public function definition()
     {
+        $kelas = ['TK', 'SD', 'SMP', 'SMA'];
         return [
             "nama" => $this->faker->name(),
             "alamat" => $this->faker->address(),
@@ -28,6 +30,7 @@ class SiswaFactory extends Factory
             "email" => $this->faker->email(),
             "nama_orang_tua" => $this->faker->name(),
             "no_telpon_ortu" => $this->faker->phoneNumber(),
+            "kelas" => Arr::random($kelas),
         ];
     }
 }

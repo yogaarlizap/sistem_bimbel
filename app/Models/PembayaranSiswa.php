@@ -17,6 +17,7 @@ class PembayaranSiswa extends Model
         "nominal_diterima",
         "nominal_tertunggak",
         "siswa_id",
+        "jenis_pembayaran",
     ];
 
     public function siswa()

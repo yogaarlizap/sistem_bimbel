@@ -111,6 +111,7 @@
                 success: function(data){
                     $('#modal-show').modal('show');
                     $('#modal-show #name').val(data.nama);
+                    $('#modal-show #kelas').val(data.kelas);
                     $('#modal-show #email').val(data.email);
                     $('#modal-show #no_telpon').val(data.no_telpon);
                     $('#modal-show #orangtua').val(data.nama_orang_tua);
@@ -131,6 +132,7 @@
                 success: function(data){
                     $('#modal-edit').modal('show');
                     $('#modal-edit #name').val(data.nama);
+                    $('#modal-edit #kelas').val(data.kelas).change();
                     $('#modal-edit #email').val(data.email);
                     $('#modal-edit #no_telpon').val(data.no_telpon);
                     $('#modal-edit #orangtua').val(data.nama_orang_tua);

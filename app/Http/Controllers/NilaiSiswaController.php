@@ -52,7 +52,6 @@ class NilaiSiswaController extends Controller
             "nilai_angka" => $request->nilai_angka,
             "nilai_huruf" => $request->nilai_huruf
         ]);
-
     }
 
     /**

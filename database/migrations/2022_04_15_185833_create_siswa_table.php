@@ -21,6 +21,7 @@ class CreateSiswaTable extends Migration
             $table->string("email");
             $table->string("nama_orang_tua");
             $table->string("no_telpon_ortu");
+            $table->enum('kelas', ['TK', 'SD', 'SMP', 'SMA']);
             $table->softDeletes();
             $table->timestamps();
         });

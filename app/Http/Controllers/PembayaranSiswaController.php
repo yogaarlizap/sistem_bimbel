@@ -43,7 +43,8 @@ class PembayaranSiswaController extends Controller
         $validate = Validator::make($request->all(), [
             "name" => "required",
             "nominal_diterima" => "required",
-            "nominal_tertunggak" => "required"
+            "nominal_tertunggak" => "required",
+            "type_pembayaran" => "required",
         ]);
 
         if ($request->nominal_tertunggak == 0) {
@@ -56,7 +57,8 @@ class PembayaranSiswaController extends Controller
             "siswa_id" => $request->name,
             "status" => $status,
             "nominal_diterima" => $request->nominal_diterima,
-            "nominal_tertunggak" => $request->nominal_tertunggak
+            "nominal_tertunggak" => $request->nominal_tertunggak,
+            "type_pembayaran" =>  $request->type_pembayaran,
         ]);
     }
 
@@ -101,7 +103,8 @@ class PembayaranSiswaController extends Controller
             "siswa_id" => $request->name,
             "status" => $status,
             "nominal_diterima" => $request->nominal_diterima,
-            "nominal_tertunggak" => $request->nominal_tertunggak
+            "nominal_tertunggak" => $request->nominal_tertunggak,
+            "type_pembayaran" =>  $request->type_pembayaran,
         ]);
     }
 

@@ -26,6 +26,7 @@
                                 <th class="align-middle">Pembayaran Diterima</th>
                                 <th class="align-middle">Status</th>
                                 <th class="align-middle">Pembayaran Tersisa</th>
+                                <th class="align-middle">Type Pembayaran</th>
                                 <th class="align-middle">Tanggal</th>
                                 <th class="align-middle" width="100">Aksi</th>
                             </tr>
@@ -53,7 +54,10 @@
                                         {{ "Rp. ".number_format($list->nominal_tertunggak) }}
                                     </td>
                                     <td class="align-middle">
-                                        {{ \Carbon\Carbon::parse($list->created_at)->format('d/m/Y') }}
+                                        {{ $list->jenis_pembayaran }}
+                                    </td>
+                                    <td class="align-middle">
+                                        {{ \Carbon\Carbon::parse($list->created_at)->format('d M Y') }}
                                     </td>
                                     <td class="align-middle">
                                         <button class="btn-sm" onclick="showButton({{ $list->id }})"><i class="fas fa-eye" style="color: #5762E3"></i></button>
@@ -119,6 +123,7 @@
                     $('#modal-show #name').val(data.siswa.nama);
                     $('#modal-show #nominal_diterima').val(data.nominal_diterima);
                     $('#modal-show #nominal_tertunggak').val(data.nominal_tertunggak);
+                    $('#modal-show #type_pembayaran').val(data.jenis_pembayaran);
                 },
                 error: function(){
                     alert("Gagal menampilkan data!")
@@ -138,6 +143,7 @@
                     $('#modal-edit #name').val(data.siswa_id).change();
                     $('#modal-edit #nominal_diterima').val(data.nominal_diterima);
                     $('#modal-edit #nominal_tertunggak').val(data.nominal_tertunggak);
+                    $('#modal-edit #type_pembayaran').val(data.jenis_pembayaran).change();
                     $('#modal-edit form').validator().on('submit', function(e){
                         if(!e.isDefaultPrevented()){
                             $.ajax({

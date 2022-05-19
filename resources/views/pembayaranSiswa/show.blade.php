@@ -25,6 +25,10 @@
                     <label for="nominal_tertunggak">Pembayaran Tersisa (Rp.)</label>
                     <input type="number" name="nominal_tertunggak" id="nominal_tertunggak" class="form-control" min="0" disabled>
                 </div>
+                <div class="form-group">
+                    <label for="type_pembayaran">Type Pembayaran</label>
+                    <input type="text" name="type_pembayaran" id="type_pembayaran" class="form-control" disabled>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

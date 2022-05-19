@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(1)->create();
-        Siswa::factory(10)->create();
-        // $this->call(
-        //     [
-        //         UserSeeder::class,
-        //         RoleSeeder::class,
-        //     ]
-        // );
+        // Siswa::factory(10)->create();
+        $this->call(
+            [
+                UserSeeder::class,
+                RoleSeeder::class,
+            ]
+        );
     }
 }

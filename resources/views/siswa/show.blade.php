@@ -14,6 +14,10 @@
                     <input type="text" name="name" id="name" class="form-control" disabled>
                 </div>
                 <div class="form-group">
+                    <label for="kelas">Kelas</label>
+                    <input name="kelas" id="kelas" class="form-control" disabled>
+                </div>
+                <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="text" name="email" id="email" class="form-control" disabled>
                 </div>

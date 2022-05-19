@@ -44,7 +44,8 @@ class SiswaController extends Controller
             'no_telpon' => 'required',
             'orangtua' => 'required',
             'no_telpon_orangtua' => 'required',
-            'alamat' => 'required'
+            'alamat' => 'required',
+            'kelas' => 'required',
         ]);
 
         Siswa::create([
@@ -53,7 +54,8 @@ class SiswaController extends Controller
             'no_telpon' => $request->no_telpon,
             'email' => $request->email,
             'nama_orang_tua' => $request->orangtua,
-            'no_telpon_ortu' => $request->no_telpon_orangtua
+            'no_telpon_ortu' => $request->no_telpon_orangtua,
+            'kelas' => $request->kelas
         ]);
     }
 
@@ -94,7 +96,8 @@ class SiswaController extends Controller
             'no_telpon' => $request->no_telpon,
             'email' => $request->email,
             'nama_orang_tua' => $request->orangtua,
-            'no_telpon_ortu' => $request->no_telpon_orangtua
+            'no_telpon_ortu' => $request->no_telpon_orangtua,
+            'kelas' => $request->kelas
         ]);
     }
 

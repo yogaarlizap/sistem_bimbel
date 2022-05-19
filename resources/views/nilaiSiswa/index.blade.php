@@ -78,7 +78,48 @@
                 autoWidth: true
             });
             $('#name').select2();
-        })
+
+        });
+
+        $('#modal-add #nilai_angka').on('input', function(){
+            let nilai_a = $('#modal-add #nilai_angka').val();
+
+            if((nilai_a>90)&&(nilai_a<=100)){
+                $('#modal-add #nilai_huruf').val('A');
+            }else if((nilai_a>80)&&(nilai_a<=90)){
+                $('#modal-add #nilai_huruf').val('B+');
+            }else if((nilai_a>70)&&(nilai_a<=80)){
+                $('#modal-add #nilai_huruf').val('B');
+            }else if((nilai_a>65)&&(nilai_a<=70)){
+                $('#modal-add #nilai_huruf').val('C+');
+            }else if((nilai_a>59)&&(nilai_a<=65)){
+                $('#modal-add #nilai_huruf').val('C');
+            }else if((nilai_a>49)&&(nilai_a<=59)){
+                $('#modal-add #nilai_huruf').val('D');
+            }else{
+                $('#modal-add #nilai_huruf').val('E');
+            }
+        });
+
+        $('#modal-edit #nilai_angka').on('input', function(){
+            let nilai_a = $('#modal-edit #nilai_angka').val();
+
+            if((nilai_a>90)&&(nilai_a<=100)){
+                $('#modal-edit #nilai_huruf').val('A');
+            }else if((nilai_a>80)&&(nilai_a<=90)){
+                $('#modal-edit #nilai_huruf').val('B+');
+            }else if((nilai_a>70)&&(nilai_a<=80)){
+                $('#modal-edit #nilai_huruf').val('B');
+            }else if((nilai_a>65)&&(nilai_a<=70)){
+                $('#modal-edit #nilai_huruf').val('C+');
+            }else if((nilai_a>59)&&(nilai_a<=65)){
+                $('#modal-edit #nilai_huruf').val('C');
+            }else if((nilai_a>49)&&(nilai_a<=59)){
+                $('#modal-edit #nilai_huruf').val('D');
+            }else{
+                $('#modal-edit #nilai_huruf').val('E');
+            }
+        });
 
         function addForm(){
             $('#modal-add').modal('show');

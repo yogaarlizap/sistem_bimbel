@@ -17,6 +17,16 @@
             <input type="text" name="name" id="name" class="form-control">
           </div>
           <div class="form-group">
+            <label for="kelas">Kelas</label>
+            <select name="kelas" id="kelas" class="form-control">
+              <option value="">Pilih Kelas Siswa</option>
+              <option value="TK">TK</option>
+              <option value="SD">SD</option>
+              <option value="SMP">SMP</option>
+              <option value="SMA">SMA</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="email">E-mail</label>
             <input type="text" name="email" id="email" class="form-control">
           </div>

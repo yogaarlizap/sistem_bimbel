@@ -33,6 +33,14 @@
                         <label for="nominal_tertunggak">Pembayaran Tersisa (Rp.)</label>
                         <input type="number" name="nominal_tertunggak" id="nominal_tertunggak" class="form-control" min="0">
                     </div>
+                    <div class="form-group">
+                        <label for="type_pembayaran">Type Pembayaran</label>
+                        <select class="form-control" name="type_pembayaran" id="type_pembayaran">
+                            <option value="">Pilih Type Pembayaran</option>
+                            <option value="Registrasi">Registrasi</option>
+                            <option value="Bulanan">Bulanan</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
